@@ -14,56 +14,79 @@
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
   <script type="text/javascript" src="jquery.notifications-1.1.min.js"></script>
   <script type="text/javascript">
-    function showNotice() {
-      $.n("This is a notice message. It will automatically go away.");
+    function showSuccess() {
+      $.n("This is a success message. It will automatically go away.");
     }
+
     function showError() {
       $.n.error("This is an error message. It won't go away you have to click the x button.");
     }
+
     function showWarning() {
       $.n.warning("This is a warning message. It will automatically go away.");
-    }    
+    }
+
+    function showInfo() {
+      $.n.info("This is an info message. It will automatically go away.");
+    }
+
+    function showDebug() {
+      $.n.info("This is a debug message. It won't go away you have to click the x button.");
+    }
+
     function showWithOptions() {
-      $.n("This message has options.", {    
-        type: "notice",
-  			timeout: 5000,
-  			stick: true,
-  			fadeSpeed : 1500,
-  			close : "close me",
-  			effect : "slide"})
-    }    
+      $.n("This message has options.", {
+        type: "success",
+        timeout: 5000,
+        stick: true,
+        fadeSpeed : 1500,
+        close : "close me",
+        effect : "slide"})
+    }
   </script>
 
 </head>
-<body>    
+<body>
   <div id="container">
-    <a href="javascript:void(0);" onclick="showNotice();">show notice</a> | 
-    <a href="javascript:void(0);" onclick="showError();">show error</a> | 
+    <a href="javascript:void(0);" onclick="showSuccess();">show success</a> |
+    <a href="javascript:void(0);" onclick="showError();">show error</a> |
     <a href="javascript:void(0);" onclick="showWarning();">show warning</a> |
+    <a href="javascript:void(0);" onclick="showInfo();">show info</a> |
+    <a href="javascript:void(0);" onclick="showDebug();">show debug</a> |
     <a href="javascript:void(0);" onclick="showWithOptions();">show using options</a> |
     <a href="javascript:void(0);" onclick="$('pre#code').show();">show code</a>
-  <pre id="code">
-    function showNotice() {
-      $.n("This is a notice message");
-    }
-    function showError() {
-      $.n.error("This is an error message. It won't go away you have to click the x button.");
-    }
-    function showWarning() {
-      $.n.warning("This is a warning message");
-    }    
-    function showWithOptions() {
-      $.n("This message has options.", {    
-        type: "notice",
-  			timeout: 5000,
-  			stick: true,
-  			fadeSpeed : 1500,
-  			close : "close me",
-  			effect : "slide"})
-    }
-  </pre>
+    <pre id="code">
+      function showSuccess() {
+        $.n("This is a success message");
+      }
+
+      function showError() {
+        $.n.error("This is an error message. It won't go away you have to click the x button.");
+      }
+
+      function showWarning() {
+        $.n.warning("This is a warning message");
+      }
+
+      function showInfo() {
+        $.n.info("This is an info message. It will automatically go away.");
+      }
+
+      function showDebug() {
+        $.n.info("This is a debug message. It won't go away you have to click the x button.");
+      }
+
+      function showWithOptions() {
+        $.n("This message has options.", {
+          type: "success",
+          timeout: 5000,
+          stick: true,
+          fadeSpeed : 1500,
+          close : "close me",
+          effect : "slide"})
+      }
+    </pre>
   </div>
-  
+
 </body>
-  
-  
+</html>
